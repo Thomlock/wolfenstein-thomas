@@ -1,9 +1,9 @@
 [gd_scene load_steps=17 format=3 uid="uid://dmx10v10gamw7"]
 
-[ext_resource type="Texture2D" uid="uid://b4ngxephqe6yt" path="res://OIP.jpg" id="1_6uqi0"]
-[ext_resource type="Texture2D" uid="uid://dnk0p5a2queq3" path="res://1000_F_549874832_odaIb0fUsf27oYS6qXj392f5673mRSW5.jpg" id="2_ppyta"]
-[ext_resource type="PackedScene" uid="uid://boc7gilk6puou" path="res://player.tscn" id="3_ykrsh"]
-[ext_resource type="PackedScene" uid="uid://cfl0vjkbm2pj2" path="res://boss.tscn" id="4_ppyta"]
+[ext_resource type="Texture2D" uid="uid://b5u4c6ipdexkx" path="res://content/texture/OIP.jpg" id="1_6uqi0"]
+[ext_resource type="Texture2D" uid="uid://cx50fj6o2fitg" path="res://content/texture/1000_F_549874832_odaIb0fUsf27oYS6qXj392f5673mRSW5.jpg" id="2_ppyta"]
+[ext_resource type="PackedScene" uid="uid://boc7gilk6puou" path="res://content/code/player.tscn" id="3_ykrsh"]
+[ext_resource type="PackedScene" uid="uid://cfl0vjkbm2pj2" path="res://content/code/boss.tscn" id="4_plx2c"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g14j6"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -104,5 +104,5 @@ shape = SubResource("ConcavePolygonShape3D_0m0f1")
 
 [node name="player" parent="." instance=ExtResource("3_ykrsh")]
 
-[node name="boss" parent="." instance=ExtResource("4_ppyta")]
-transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0, -7.70716)
+[node name="boss" parent="." instance=ExtResource("4_plx2c")]
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0, -9.33751)

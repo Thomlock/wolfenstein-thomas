@@ -1,5 +1,5 @@
 extends Area3D
-const ammo_sfx = preload("res://Pickup(1).wav")
+const ammo_sfx = preload("res://content/audio/Pickup(1).wav")
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player") and Global.ammo < 100:

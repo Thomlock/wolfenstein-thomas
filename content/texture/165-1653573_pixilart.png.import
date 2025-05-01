@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wl7hb2cspoeq"
-path.s3tc="res://.godot/imported/165-1653573_pixilart.png-76a8829f7492eac246311b0b51268600.s3tc.ctex"
+uid="uid://cp4cd6ooipxch"
+path.s3tc="res://.godot/imported/165-1653573_pixilart.png-a49f5b1eecaf815b1caa2cb28f924196.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://165-1653573_pixilart.png"
-dest_files=["res://.godot/imported/165-1653573_pixilart.png-76a8829f7492eac246311b0b51268600.s3tc.ctex"]
+source_file="res://content/texture/165-1653573_pixilart.png"
+dest_files=["res://.godot/imported/165-1653573_pixilart.png-a49f5b1eecaf815b1caa2cb28f924196.s3tc.ctex"]
 
 [params]
 

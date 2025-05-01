@@ -1,19 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://dupae86aderj6"]
+[gd_scene load_steps=3 format=3 uid="uid://dupae86aderj6"]
 
-[ext_resource type="Script" uid="uid://ddbw33g06e13y" path="res://medkit.gd" id="1_sls6a"]
-[ext_resource type="Texture2D" uid="uid://cnfyf6csj5uf4" path="res://wolf-items.png" id="2_oktk0"]
+[ext_resource type="Script" uid="uid://rfr1um1aa3xx" path="res://content/code/medkit.gd" id="1_3fnuk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qofbd"]
 radius = 0.288773
 height = 0.797716
 
 [node name="medkit" type="Area3D"]
-script = ExtResource("1_sls6a")
+script = ExtResource("1_3fnuk")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0.9, 0)
 billboard = 2
-texture = ExtResource("2_oktk0")
 hframes = 4
 frame = 1
 

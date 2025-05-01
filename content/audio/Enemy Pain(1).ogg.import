@@ -2,13 +2,13 @@
 
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
-uid="uid://bqahtbelx8e3c"
-path="res://.godot/imported/Enemy Pain(1).ogg-25d00a003a7e8acbcc19f2dc92c1da07.oggvorbisstr"
+uid="uid://cq7die12hphj1"
+path="res://.godot/imported/Enemy Pain(1).ogg-0d9b6de398114f99780d966324426df1.oggvorbisstr"
 
 [deps]
 
-source_file="res://Enemy Pain(1).ogg"
-dest_files=["res://.godot/imported/Enemy Pain(1).ogg-25d00a003a7e8acbcc19f2dc92c1da07.oggvorbisstr"]
+source_file="res://content/audio/Enemy Pain(1).ogg"
+dest_files=["res://.godot/imported/Enemy Pain(1).ogg-0d9b6de398114f99780d966324426df1.oggvorbisstr"]
 
 [params]
 

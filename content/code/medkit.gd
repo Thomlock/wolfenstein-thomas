@@ -1,5 +1,5 @@
 extends Area3D
-const medkit_sfx = preload("res://Pickup(1).wav")
+const medkit_sfx = preload("res://content/audio/Pickup(1).wav")
 
 
 func _on_body_entered(body: Node3D) -> void:

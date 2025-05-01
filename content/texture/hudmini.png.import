@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjxor4rrb1yt5"
-path="res://.godot/imported/hudmini.png-71ee284f78e1c875aec81143e4020274.ctex"
+uid="uid://b64hmfwv50282"
+path="res://.godot/imported/hudmini.png-c68b4790c33b32585c354ca869a995bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://hudmini.png"
-dest_files=["res://.godot/imported/hudmini.png-71ee284f78e1c875aec81143e4020274.ctex"]
+source_file="res://content/texture/hudmini.png"
+dest_files=["res://.godot/imported/hudmini.png-c68b4790c33b32585c354ca869a995bb.ctex"]
 
 [params]
 

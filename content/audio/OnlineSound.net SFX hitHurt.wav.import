@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://bgckgy5gd6onf"
-path="res://.godot/imported/OnlineSound.net SFX hitHurt.wav-fc89764855f1f95a1c115ab8804ffb1f.sample"
+uid="uid://yymdlk5my81s"
+path="res://.godot/imported/OnlineSound.net SFX hitHurt.wav-83b4e4e32ada28a7355adf9ab4411260.sample"
 
 [deps]
 
-source_file="res://OnlineSound.net SFX hitHurt.wav"
-dest_files=["res://.godot/imported/OnlineSound.net SFX hitHurt.wav-fc89764855f1f95a1c115ab8804ffb1f.sample"]
+source_file="res://content/audio/OnlineSound.net SFX hitHurt.wav"
+dest_files=["res://.godot/imported/OnlineSound.net SFX hitHurt.wav-83b4e4e32ada28a7355adf9ab4411260.sample"]
 
 [params]
 

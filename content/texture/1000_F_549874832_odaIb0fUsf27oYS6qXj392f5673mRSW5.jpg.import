@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnk0p5a2queq3"
-path.s3tc="res://.godot/imported/1000_F_549874832_odaIb0fUsf27oYS6qXj392f5673mRSW5.jpg-933ab6242b4567831fb7461c9aef1363.s3tc.ctex"
+uid="uid://cx50fj6o2fitg"
+path.s3tc="res://.godot/imported/1000_F_549874832_odaIb0fUsf27oYS6qXj392f5673mRSW5.jpg-c9589aec598ed7b787e5f3e6a69073a2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://1000_F_549874832_odaIb0fUsf27oYS6qXj392f5673mRSW5.jpg"
-dest_files=["res://.godot/imported/1000_F_549874832_odaIb0fUsf27oYS6qXj392f5673mRSW5.jpg-933ab6242b4567831fb7461c9aef1363.s3tc.ctex"]
+source_file="res://content/texture/1000_F_549874832_odaIb0fUsf27oYS6qXj392f5673mRSW5.jpg"
+dest_files=["res://.godot/imported/1000_F_549874832_odaIb0fUsf27oYS6qXj392f5673mRSW5.jpg-c9589aec598ed7b787e5f3e6a69073a2.s3tc.ctex"]
 
 [params]
 

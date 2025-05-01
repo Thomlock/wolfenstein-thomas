@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://cbwqbym45e0td"
-path="res://.godot/imported/Health(1).wav-3bf9b8b4e67f4b5ec15f2cb5b4153a32.sample"
+uid="uid://b7dehc2tlbfby"
+path="res://.godot/imported/Health(1).wav-cd0e651dbe989ed1e5886c4c290335c7.sample"
 
 [deps]
 
-source_file="res://Health(1).wav"
-dest_files=["res://.godot/imported/Health(1).wav-3bf9b8b4e67f4b5ec15f2cb5b4153a32.sample"]
+source_file="res://content/audio/Health(1).wav"
+dest_files=["res://.godot/imported/Health(1).wav-cd0e651dbe989ed1e5886c4c290335c7.sample"]
 
 [params]
 
@@ -21,4 +21,4 @@ edit/normalize=false
 edit/loop_mode=0
 edit/loop_begin=0
 edit/loop_end=-1
-compress/mode=0
+compress/mode=2

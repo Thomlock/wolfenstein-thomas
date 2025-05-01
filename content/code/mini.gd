@@ -1,6 +1,6 @@
 extends Area3D
 
-const mini_sfx = preload("res://All Right!(1).wav")
+const mini_sfx = preload("res://content/audio/All Right!(1).wav")
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):

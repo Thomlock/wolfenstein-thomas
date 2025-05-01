@@ -1,13 +1,13 @@
 [gd_scene load_steps=27 format=3 uid="uid://do0f6xntc4h6k"]
 
-[ext_resource type="Texture2D" uid="uid://dnk0p5a2queq3" path="res://1000_F_549874832_odaIb0fUsf27oYS6qXj392f5673mRSW5.jpg" id="1_3p3x8"]
-[ext_resource type="PackedScene" uid="uid://boc7gilk6puou" path="res://player.tscn" id="1_mxjdp"]
-[ext_resource type="Texture2D" uid="uid://b4ngxephqe6yt" path="res://OIP.jpg" id="1_vvj12"]
-[ext_resource type="PackedScene" uid="uid://c28osuvoqkpbo" path="res://ammo.tscn" id="5_3i2mf"]
-[ext_resource type="PackedScene" uid="uid://b8824qm2uek56" path="res://machine.tscn" id="6_1gshj"]
-[ext_resource type="Texture2D" uid="uid://c7olv715et0fb" path="res://door(1).png" id="6_gbfbk"]
-[ext_resource type="PackedScene" uid="uid://dupae86aderj6" path="res://medkit.tscn" id="7_hmp4e"]
-[ext_resource type="PackedScene" uid="uid://d1jpsl6xy5twe" path="res://guard.tscn" id="8_gbfbk"]
+[ext_resource type="Texture2D" uid="uid://cx50fj6o2fitg" path="res://content/texture/1000_F_549874832_odaIb0fUsf27oYS6qXj392f5673mRSW5.jpg" id="1_3p3x8"]
+[ext_resource type="PackedScene" uid="uid://boc7gilk6puou" path="res://content/code/player.tscn" id="1_mxjdp"]
+[ext_resource type="Texture2D" uid="uid://b5u4c6ipdexkx" path="res://content/texture/OIP.jpg" id="1_vvj12"]
+[ext_resource type="PackedScene" uid="uid://c28osuvoqkpbo" path="res://content/code/ammo.tscn" id="5_3i2mf"]
+[ext_resource type="PackedScene" uid="uid://b8824qm2uek56" path="res://content/code/machine.tscn" id="6_1gshj"]
+[ext_resource type="Texture2D" uid="uid://iguom5k3cb2p" path="res://content/texture/door(1).png" id="6_gbfbk"]
+[ext_resource type="PackedScene" uid="uid://dupae86aderj6" path="res://content/code/medkit.tscn" id="7_hmp4e"]
+[ext_resource type="PackedScene" uid="uid://d1jpsl6xy5twe" path="res://content/code/guard.tscn" id="8_gbfbk"]
 
 [sub_resource type="GDScript" id="GDScript_aeak5"]
 script/source = "extends Node3D
@@ -21,13 +21,13 @@ func _ready() -> void:
 func _on_area_3d_body_entered(body):
 	if body.is_in_group(\"player\"):
 		Global.current_level = 2
-		get_tree().change_scene_to_file(\"res://level_2.tscn\")
+		get_tree().change_scene_to_file(\"res://content/code/level_2.tscn\")
 
 
 func _on_portal_body_entered(body: Node3D) -> void:
 	if body.is_in_group(\"player\"):
 		Global.current_level = 3
-		get_tree().change_scene_to_file(\"res://level_3.tscn\")
+		get_tree().change_scene_to_file(\"res://content/code/level_3.tscn\")
   
 "
 
@@ -166,6 +166,7 @@ mesh = SubResource("PlaneMesh_wse8f")
 
 [node name="ammo2" parent="." instance=ExtResource("6_1gshj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.79035, 0.1328, -8.48579)
+script = null
 
 [node name="ammo3" parent="." instance=ExtResource("7_hmp4e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.67885, 0.222528, -4.98434)

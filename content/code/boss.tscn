@@ -1,10 +1,10 @@
 [gd_scene load_steps=15 format=3 uid="uid://cfl0vjkbm2pj2"]
 
-[ext_resource type="Texture2D" uid="uid://ckt8ko1u1qs55" path="res://165-1653573_pixilarteat.png" id="2_o1i15"]
-[ext_resource type="Texture2D" uid="uid://wl7hb2cspoeq" path="res://165-1653573_pixilart.png" id="2_we8h1"]
-[ext_resource type="Texture2D" uid="uid://dmgdfur3f0snc" path="res://165-1653573_pixilart2.png" id="3_kvofc"]
-[ext_resource type="Texture2D" uid="uid://bexwygxvpl7od" path="res://165-1653573_pixilartlaser1.png" id="4_ef0k6"]
-[ext_resource type="Texture2D" uid="uid://chvafemsxqjcm" path="res://165-1653573_pixilartlaser.png" id="5_ry61v"]
+[ext_resource type="Texture2D" uid="uid://1ny0rccda1dp" path="res://content/texture/165-1653573_pixilarteat.png" id="1_gec4i"]
+[ext_resource type="Texture2D" uid="uid://cp4cd6ooipxch" path="res://content/texture/165-1653573_pixilart.png" id="2_w7hxf"]
+[ext_resource type="Texture2D" uid="uid://bcbgenslq3wsi" path="res://content/texture/165-1653573_pixilart2.png" id="3_5ep1u"]
+[ext_resource type="Texture2D" uid="uid://cogkfb0o28ukd" path="res://content/texture/165-1653573_pixilartlaser1.png" id="4_3757k"]
+[ext_resource type="Texture2D" uid="uid://curob0hbpjvhe" path="res://content/texture/165-1653573_pixilartlaser.png" id="5_nj0dv"]
 
 [sub_resource type="GDScript" id="GDScript_lnbgr"]
 script/source = "extends CharacterBody3D
@@ -17,9 +17,9 @@ var laser_range = 10
 var rand = 1
 @onready var player = Global.player
 const SPEED = 4
-const laser_sfx = preload(\"res://245195691_nw_prev.mp3\")
-const crunch_sfx = preload(\"res://OnlineSound.net SFX hitHurt.wav\")
-const laser = preload(\"res://laser.tscn\")
+const laser_sfx = preload(\"res://content/audio/245195691_nw_prev.mp3\")
+const crunch_sfx = preload(\"res://content/audio/OnlineSound.net SFX hitHurt.wav\")
+const laser = preload(\"res://content/code/laser.tscn\")
 
 func _ready():
 	add_to_group(\"enemy\")
@@ -72,8 +72,9 @@ func laser_attack():
 	await $AnimatedSprite3D.animation_finished
 	var laser_shoot = laser.instantiate()
 	laser_shoot.position = self.position
-	laser_shoot.position.y += 1
+	laser_shoot.position.y += 2.65
 	get_parent().add_child(laser_shoot)
+	$AnimatedSprite3D.play(\"default\")
 	
 	
 func attack():
@@ -88,6 +89,7 @@ func attack():
 	await $AnimatedSprite3D.animation_finished 
 	#print(is_attacking)
 	is_attacking = false
+	$AnimatedSprite3D.play(\"default\")
 	rand = randi()%2
 	#print(rand)
 	
@@ -100,6 +102,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		AudioManager.play3D(crunch_sfx, self, -20)
 		body.damage()
 		await $AnimatedSprite3D.animation_finished 
+		$AnimatedSprite3D.play(\"default\")
 		is_attacking = false
 		rand = randi()%2
 "
@@ -108,62 +111,56 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 radius = 4.85421
 height = 11.972
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kvofc"]
-atlas = ExtResource("2_o1i15")
+[sub_resource type="AtlasTexture" id="AtlasTexture_v33u8"]
+atlas = ExtResource("1_gec4i")
 region = Rect2(0, 0, 860, 1196)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_we8h1"]
-atlas = ExtResource("2_we8h1")
+[sub_resource type="AtlasTexture" id="AtlasTexture_8163s"]
+atlas = ExtResource("2_w7hxf")
 region = Rect2(0, 0, 860, 1196)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_etj48"]
-atlas = ExtResource("2_we8h1")
+[sub_resource type="AtlasTexture" id="AtlasTexture_asrw7"]
+atlas = ExtResource("2_w7hxf")
 region = Rect2(0, 0, 860, 1196)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_h3lj5"]
-atlas = ExtResource("3_kvofc")
+[sub_resource type="AtlasTexture" id="AtlasTexture_eudhw"]
+atlas = ExtResource("3_5ep1u")
 region = Rect2(0, 0, 860, 1196)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1s1j2"]
-atlas = ExtResource("4_ef0k6")
+[sub_resource type="AtlasTexture" id="AtlasTexture_fds2e"]
+atlas = ExtResource("4_3757k")
 region = Rect2(0, 0, 860, 1196)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_km2bi"]
-atlas = ExtResource("5_ry61v")
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1fla"]
+atlas = ExtResource("5_nj0dv")
 region = Rect2(0, 0, 860, 1196)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u0duv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kvofc")
+"texture": SubResource("AtlasTexture_v33u8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_we8h1")
+"texture": SubResource("AtlasTexture_8163s")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kvofc")
+"texture": SubResource("AtlasTexture_v33u8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_we8h1")
+"texture": SubResource("AtlasTexture_8163s")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kvofc")
+"texture": SubResource("AtlasTexture_v33u8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_we8h1")
+"texture": SubResource("AtlasTexture_8163s")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kvofc")
+"texture": SubResource("AtlasTexture_v33u8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_we8h1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kvofc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_we8h1")
+"texture": SubResource("AtlasTexture_8163s")
 }],
 "loop": false,
 "name": &"crunch",
@@ -171,10 +168,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_etj48")
+"texture": SubResource("AtlasTexture_asrw7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_h3lj5")
+"texture": SubResource("AtlasTexture_eudhw")
 }],
 "loop": true,
 "name": &"default",
@@ -182,70 +179,40 @@ animations = [{
 }, {
 "frames": [{
 "duration": 4.0,
-"texture": SubResource("AtlasTexture_1s1j2")
+"texture": SubResource("AtlasTexture_fds2e")
 }, {
-"duration": 4.01,
-"texture": SubResource("AtlasTexture_km2bi")
-}, {
-"duration": 2.0,
-"texture": SubResource("AtlasTexture_1s1j2")
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_w1fla")
 }, {
 "duration": 2.0,
-"texture": SubResource("AtlasTexture_km2bi")
+"texture": SubResource("AtlasTexture_fds2e")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_w1fla")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1s1j2")
+"texture": SubResource("AtlasTexture_fds2e")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_km2bi")
+"texture": SubResource("AtlasTexture_w1fla")
 }, {
 "duration": 0.5,
-"texture": SubResource("AtlasTexture_1s1j2")
+"texture": SubResource("AtlasTexture_fds2e")
 }, {
 "duration": 0.5,
-"texture": SubResource("AtlasTexture_km2bi")
+"texture": SubResource("AtlasTexture_w1fla")
 }, {
 "duration": 0.5,
-"texture": SubResource("AtlasTexture_1s1j2")
+"texture": SubResource("AtlasTexture_fds2e")
 }, {
 "duration": 0.5,
-"texture": SubResource("AtlasTexture_km2bi")
+"texture": SubResource("AtlasTexture_w1fla")
 }, {
 "duration": 0.5,
-"texture": SubResource("AtlasTexture_1s1j2")
+"texture": SubResource("AtlasTexture_fds2e")
 }, {
 "duration": 0.5,
-"texture": SubResource("AtlasTexture_km2bi")
-}, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_1s1j2")
-}, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_km2bi")
-}, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_1s1j2")
-}, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_km2bi")
-}, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_1s1j2")
-}, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_km2bi")
-}, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_1s1j2")
-}, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_km2bi")
-}, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_1s1j2")
-}, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_km2bi")
+"texture": SubResource("AtlasTexture_w1fla")
 }],
 "loop": false,
 "name": &"laser",
@@ -264,9 +231,9 @@ shape = SubResource("CapsuleShape3D_kles1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.89625, 0)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_u0duv")
-animation = &"crunch"
+animation = &"laser"
 autoplay = "default"
-frame = 9
+frame = 11
 frame_progress = 1.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]

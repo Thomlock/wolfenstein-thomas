@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6tnpbkmv0ssu"
-path="res://.godot/imported/bjface.png-1cccb2b5a51774f5be264d82097e4303.ctex"
+uid="uid://bdhx40qvydwqu"
+path="res://.godot/imported/bjface.png-20276a8d536253bb7499b462a5635571.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bjface.png"
-dest_files=["res://.godot/imported/bjface.png-1cccb2b5a51774f5be264d82097e4303.ctex"]
+source_file="res://content/texture/bjface.png"
+dest_files=["res://.godot/imported/bjface.png-20276a8d536253bb7499b462a5635571.ctex"]
 
 [params]
 

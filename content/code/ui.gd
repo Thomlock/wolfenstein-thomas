@@ -4,10 +4,10 @@ var time_since_hast_shot = 0.0
 var fire_rate = 1.0
 var can_shoot = true
 var weapon_texture = {
-	"gun": preload("res://hudgun.png"),
-	"machine": preload("res://hudmachinegun.png"),
-	"mini": preload("res://hudmini.png"),
-	"knife": preload("res://hudknife.png")
+	"gun": preload("res://content/texture/hudgun.png"),
+	"machine": preload("res://content/texture/hudmachinegun.png"),
+	"mini": preload("res://content/texture/hudmini.png"),
+	"knife": preload("res://content/texture/hudknife.png")
 	}
 func _ready():
 	$AnimatedSprite2D.animation_finished.connect(_on_AnimatedSprite2D_animation_finished)

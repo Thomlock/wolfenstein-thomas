@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://c5snfyfly358h"]
 
-[ext_resource type="Script" uid="uid://ddevvfigb6ikj" path="res://mini.gd" id="1_gxn5r"]
-[ext_resource type="Texture2D" uid="uid://cnfyf6csj5uf4" path="res://wolf-items.png" id="2_1fp3g"]
-[ext_resource type="AudioStream" uid="uid://qu8fe3nc6sr4" path="res://All Right!(1).wav" id="3_gnnb6"]
+[ext_resource type="Script" uid="uid://c24wtfudm6oog" path="res://content/code/mini.gd" id="1_gxn5r"]
+[ext_resource type="Texture2D" uid="uid://uvrpmid6aqpp" path="res://content/texture/wolf-items.png" id="2_1fp3g"]
+[ext_resource type="AudioStream" uid="uid://dp1lo2qlebob8" path="res://content/audio/All Right!(1).wav" id="3_gnnb6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qofbd"]
 radius = 0.288773

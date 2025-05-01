@@ -1,13 +1,12 @@
-[gd_scene load_steps=24 format=3 uid="uid://cb6vy6sra1sn4"]
+[gd_scene load_steps=20 format=3 uid="uid://cb6vy6sra1sn4"]
 
-[ext_resource type="Script" uid="uid://diwid3qrsuxhi" path="res://level_2.gd" id="1_7dov7"]
-[ext_resource type="Texture2D" uid="uid://b4ngxephqe6yt" path="res://OIP.jpg" id="1_60unr"]
-[ext_resource type="Texture2D" uid="uid://dnk0p5a2queq3" path="res://1000_F_549874832_odaIb0fUsf27oYS6qXj392f5673mRSW5.jpg" id="2_d0hyd"]
-[ext_resource type="PackedScene" uid="uid://d1jpsl6xy5twe" path="res://guard.tscn" id="3_tkon1"]
-[ext_resource type="PackedScene" uid="uid://boc7gilk6puou" path="res://player.tscn" id="4_s0uqs"]
-[ext_resource type="PackedScene" uid="uid://c28osuvoqkpbo" path="res://ammo.tscn" id="5_poqin"]
-[ext_resource type="Texture2D" uid="uid://c7olv715et0fb" path="res://door(1).png" id="7_7j8ne"]
-[ext_resource type="PackedScene" uid="uid://dupae86aderj6" path="res://medkit.tscn" id="9_ehv2h"]
+[ext_resource type="Script" uid="uid://brf4brtd0xwnw" path="res://content/code/level_2.gd" id="1_7dov7"]
+[ext_resource type="Texture2D" uid="uid://b5u4c6ipdexkx" path="res://content/texture/OIP.jpg" id="1_60unr"]
+[ext_resource type="Texture2D" uid="uid://cx50fj6o2fitg" path="res://content/texture/1000_F_549874832_odaIb0fUsf27oYS6qXj392f5673mRSW5.jpg" id="2_d0hyd"]
+[ext_resource type="PackedScene" uid="uid://d1jpsl6xy5twe" path="res://content/code/guard.tscn" id="3_tkon1"]
+[ext_resource type="PackedScene" uid="uid://boc7gilk6puou" path="res://content/code/player.tscn" id="4_s0uqs"]
+[ext_resource type="Texture2D" uid="uid://iguom5k3cb2p" path="res://content/texture/door(1).png" id="7_7j8ne"]
+[ext_resource type="PackedScene" uid="uid://dupae86aderj6" path="res://content/code/medkit.tscn" id="9_ehv2h"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1lviy"]
 albedo_texture = ExtResource("1_60unr")
@@ -26,14 +25,6 @@ uv1_scale = Vector3(20, 5, 1)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_c444b"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eoq84"]
-albedo_texture = ExtResource("1_60unr")
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_yl73a"]
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xbcdb"]
-data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_15wb7"]
 size = Vector3(1.92529, 1.79443, 1)
@@ -141,27 +132,6 @@ shape = SubResource("ConcavePolygonShape3D_c444b")
 [node name="player" parent="." instance=ExtResource("4_s0uqs")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 15.5235, 0, -15.7961)
 
-[node name="ammo" parent="." instance=ExtResource("5_poqin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.2202, 0, 15.3704)
-
-[node name="ammo2" parent="." instance=ExtResource("5_poqin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5966, 0, 1.65418)
-
-[node name="ammo3" parent="." instance=ExtResource("5_poqin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.45174, -3.8147e-06, 1.2376)
-
-[node name="ammo4" parent="." instance=ExtResource("5_poqin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.69394, 0, 17.02)
-
-[node name="ammo5" parent="." instance=ExtResource("5_poqin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8523, 0, -0.382983)
-
-[node name="ammo6" parent="." instance=ExtResource("5_poqin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2173, 0, -13.0972)
-
-[node name="ammo7" parent="." instance=ExtResource("5_poqin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0785, 0, -0.435296)
-
 [node name="floor2" type="MeshInstance3D" parent="."]
 transform = Transform3D(20, 0, 0, 0, -1, 1.74846e-06, 0, -8.74228e-08, -20, 0, 4.42435, 0)
 material_override = SubResource("StandardMaterial3D_1lviy")
@@ -171,17 +141,6 @@ mesh = SubResource("PlaneMesh_neye4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_guipt")
-
-[node name="floor3" type="MeshInstance3D" parent="."]
-transform = Transform3D(-20, 1.52855e-13, 1.74846e-06, 0, -20, 1.74846e-06, 1.74846e-06, 1.74846e-06, 20, 0, 10.0212, 0)
-material_override = SubResource("StandardMaterial3D_eoq84")
-mesh = SubResource("PlaneMesh_yl73a")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="floor3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="floor3/StaticBody3D"]
-transform = Transform3D(1, 8.47033e-22, 1.42109e-14, 8.47033e-22, 1, 1.42109e-14, -1.42109e-14, -1.42109e-14, 1, 0, 0, 0)
-shape = SubResource("ConcavePolygonShape3D_xbcdb")
 
 [node name="door" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6592, -0.0623594, -17.5922)
@@ -202,21 +161,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4558, 0, -8.55443)
 environment = SubResource("Environment_eoq84")
 
 [node name="guard" parent="." instance=ExtResource("3_tkon1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2834, 0, 4.57757)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3641, 0, 0)
 
 [node name="guard2" parent="." instance=ExtResource("3_tkon1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6738, 0, 6.3224)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.4212, 0, 5.49854)
 
 [node name="guard3" parent="." instance=ExtResource("3_tkon1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.22426, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.30927, 0, 13.4888)
 
 [node name="guard4" parent="." instance=ExtResource("3_tkon1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.23374, 0, -13.9731)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.48337, 0, -13.8848)
 
 [node name="guard5" parent="." instance=ExtResource("3_tkon1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.01804, 0, 9.68206)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.89158, 0, 0)
 
 [node name="guard6" parent="." instance=ExtResource("3_tkon1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6586, 0, 5.87374)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4203, 0, 0)
 
 [connection signal="body_entered" from="door" to="." method="_on_door_body_entered"]

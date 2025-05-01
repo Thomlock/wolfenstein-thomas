@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://bagla5784bsr2"
-path="res://.godot/imported/Knife(1).wav-2a3431c8fa7883cd10176d92ecc660df.sample"
+uid="uid://dsdvden3w7o7f"
+path="res://.godot/imported/Knife(1).wav-96318b146b1f9f655635de85a6a3b93e.sample"
 
 [deps]
 
-source_file="res://Knife(1).wav"
-dest_files=["res://.godot/imported/Knife(1).wav-2a3431c8fa7883cd10176d92ecc660df.sample"]
+source_file="res://content/audio/Knife(1).wav"
+dest_files=["res://.godot/imported/Knife(1).wav-96318b146b1f9f655635de85a6a3b93e.sample"]
 
 [params]
 
@@ -21,4 +21,4 @@ edit/normalize=false
 edit/loop_mode=0
 edit/loop_begin=0
 edit/loop_end=-1
-compress/mode=0
+compress/mode=2

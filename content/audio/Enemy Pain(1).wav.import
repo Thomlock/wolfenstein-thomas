@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://cho4xcsp6vohd"
-path="res://.godot/imported/Enemy Pain(1).wav-128153b027212a70aa6cdf1dc8645c64.sample"
+uid="uid://bvjt1sbb1d2pb"
+path="res://.godot/imported/Enemy Pain(1).wav-3900db9d84a3c512fe2da663fcf7230b.sample"
 
 [deps]
 
-source_file="res://Enemy Pain(1).wav"
-dest_files=["res://.godot/imported/Enemy Pain(1).wav-128153b027212a70aa6cdf1dc8645c64.sample"]
+source_file="res://content/audio/Enemy Pain(1).wav"
+dest_files=["res://.godot/imported/Enemy Pain(1).wav-3900db9d84a3c512fe2da663fcf7230b.sample"]
 
 [params]
 
@@ -21,4 +21,4 @@ edit/normalize=false
 edit/loop_mode=0
 edit/loop_begin=0
 edit/loop_end=-1
-compress/mode=0
+compress/mode=2

@@ -2,13 +2,13 @@
 
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
-uid="uid://c8cauh6oyiegl"
-path="res://.godot/imported/gun.ogg-86e76b24e4c8a867eaf4473f9e27b531.oggvorbisstr"
+uid="uid://txm01x0oq3ac"
+path="res://.godot/imported/gun.ogg-43dd726457907dac1b63cee379deacdf.oggvorbisstr"
 
 [deps]
 
-source_file="res://gun.ogg"
-dest_files=["res://.godot/imported/gun.ogg-86e76b24e4c8a867eaf4473f9e27b531.oggvorbisstr"]
+source_file="res://content/audio/gun.ogg"
+dest_files=["res://.godot/imported/gun.ogg-43dd726457907dac1b63cee379deacdf.oggvorbisstr"]
 
 [params]
 

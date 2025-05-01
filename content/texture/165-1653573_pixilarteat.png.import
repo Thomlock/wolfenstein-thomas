@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckt8ko1u1qs55"
-path.s3tc="res://.godot/imported/165-1653573_pixilarteat.png-49fa0bb3718cabaab87242eac99bea88.s3tc.ctex"
+uid="uid://1ny0rccda1dp"
+path.s3tc="res://.godot/imported/165-1653573_pixilarteat.png-3e7ffb79763822a1b6a86952f4514c7a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://165-1653573_pixilarteat.png"
-dest_files=["res://.godot/imported/165-1653573_pixilarteat.png-49fa0bb3718cabaab87242eac99bea88.s3tc.ctex"]
+source_file="res://content/texture/165-1653573_pixilarteat.png"
+dest_files=["res://.godot/imported/165-1653573_pixilarteat.png-3e7ffb79763822a1b6a86952f4514c7a.s3tc.ctex"]
 
 [params]
 

@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://djncts7xs4pyi"
-path="res://.godot/imported/Door(1).wav-90f7a9a3df696c4da4a053f53ac9f29c.sample"
+uid="uid://d166nubll5u5"
+path="res://.godot/imported/Door(1).wav-759da72e9c3fbd0e2aa3ed193098c32d.sample"
 
 [deps]
 
-source_file="res://Door(1).wav"
-dest_files=["res://.godot/imported/Door(1).wav-90f7a9a3df696c4da4a053f53ac9f29c.sample"]
+source_file="res://content/audio/Door(1).wav"
+dest_files=["res://.godot/imported/Door(1).wav-759da72e9c3fbd0e2aa3ed193098c32d.sample"]
 
 [params]
 
@@ -21,4 +21,4 @@ edit/normalize=false
 edit/loop_mode=0
 edit/loop_begin=0
 edit/loop_end=-1
-compress/mode=0
+compress/mode=2

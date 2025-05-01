@@ -2,13 +2,13 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://dxpg3a0ofjrw"
-path="res://.godot/imported/KnifeStab.mp3-0ec2918b91f76e50a22aed28eda8a5a3.mp3str"
+uid="uid://ckmqpx5ohpjkw"
+path="res://.godot/imported/KnifeStab.mp3-163b8025d8a33dd0b458c958b47b8a49.mp3str"
 
 [deps]
 
-source_file="res://KnifeStab.mp3"
-dest_files=["res://.godot/imported/KnifeStab.mp3-0ec2918b91f76e50a22aed28eda8a5a3.mp3str"]
+source_file="res://content/audio/KnifeStab.mp3"
+dest_files=["res://.godot/imported/KnifeStab.mp3-163b8025d8a33dd0b458c958b47b8a49.mp3str"]
 
 [params]
 

@@ -1,13 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://h50me0q2fgjt"]
+[gd_scene load_steps=22 format=3 uid="uid://h50me0q2fgjt"]
 
-[ext_resource type="Texture2D" uid="uid://b4ngxephqe6yt" path="res://OIP.jpg" id="1_16pka"]
-[ext_resource type="Script" uid="uid://ihfigjfsv025" path="res://level_3.gd" id="1_j8bo8"]
-[ext_resource type="Texture2D" uid="uid://dnk0p5a2queq3" path="res://1000_F_549874832_odaIb0fUsf27oYS6qXj392f5673mRSW5.jpg" id="2_j8bo8"]
-[ext_resource type="PackedScene" uid="uid://boc7gilk6puou" path="res://player.tscn" id="3_1jdk1"]
-[ext_resource type="Texture2D" uid="uid://c7olv715et0fb" path="res://door(1).png" id="5_7ds5r"]
-[ext_resource type="PackedScene" uid="uid://d1jpsl6xy5twe" path="res://guard.tscn" id="6_liaj6"]
-[ext_resource type="PackedScene" uid="uid://c5snfyfly358h" path="res://mini.tscn" id="7_b60u5"]
-[ext_resource type="PackedScene" uid="uid://dupae86aderj6" path="res://medkit.tscn" id="8_kmy7e"]
+[ext_resource type="Texture2D" uid="uid://b5u4c6ipdexkx" path="res://content/texture/OIP.jpg" id="1_16pka"]
+[ext_resource type="Script" uid="uid://cqwn8unb2ylmi" path="res://content/code/level_3.gd" id="1_j8bo8"]
+[ext_resource type="Texture2D" uid="uid://cx50fj6o2fitg" path="res://content/texture/1000_F_549874832_odaIb0fUsf27oYS6qXj392f5673mRSW5.jpg" id="2_j8bo8"]
+[ext_resource type="PackedScene" uid="uid://boc7gilk6puou" path="res://content/code/player.tscn" id="3_1jdk1"]
+[ext_resource type="Texture2D" uid="uid://iguom5k3cb2p" path="res://content/texture/door(1).png" id="5_7ds5r"]
+[ext_resource type="PackedScene" uid="uid://d1jpsl6xy5twe" path="res://content/code/guard.tscn" id="6_liaj6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6p2dc"]
 albedo_texture = ExtResource("1_16pka")
@@ -214,31 +212,21 @@ transform = Transform3D(2, 0, 0, 0, -1.74846e-07, -2, 0, 4, -8.74228e-08, 0, 2, 
 material_override = SubResource("StandardMaterial3D_ghrvs")
 mesh = SubResource("PlaneMesh_jvy75")
 
-[node name="ammo" parent="." instance=ExtResource("7_b60u5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.45456, 0, 17.3936)
-
-[node name="ammo2" parent="." instance=ExtResource("8_kmy7e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1424, 0, -16.1146)
-
-[node name="ammo3" parent="." instance=ExtResource("8_kmy7e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4845, 0, 14.4279)
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_liaj6")
 
 [node name="guard" parent="." instance=ExtResource("6_liaj6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.56066, 0, 0)
 
 [node name="guard2" parent="." instance=ExtResource("6_liaj6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1378, 0, -0.0942135)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3914, 0, -16.1692)
 
 [node name="guard3" parent="." instance=ExtResource("6_liaj6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.78206, 0, -15.9626)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.68641, 0, 13.5882)
 
 [node name="guard4" parent="." instance=ExtResource("6_liaj6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.25127, 0, 14.4118)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4126, 0, 16.4117)
 
 [node name="guard5" parent="." instance=ExtResource("6_liaj6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7903, 0, 12.7048)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8415, 0, 17.8295)
 
 [connection signal="body_entered" from="door" to="." method="_on_door_body_entered"]

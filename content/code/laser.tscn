@@ -1,22 +1,49 @@
 [gd_scene load_steps=5 format=3 uid="uid://dy8q8o64sl04s"]
 
-[ext_resource type="Script" uid="uid://35xh1qtpqg2p" path="res://laser.gd" id="1_fn5yt"]
+[ext_resource type="Script" uid="uid://c6gu8olwt0y0y" path="res://content/code/laser.gd" id="1_jw0um"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oes6l"]
+radius = 0.001
+height = 0.002
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6vqwg"]
-albedo_color = Color(0.431373, 0, 0, 1)
+vertex_color_use_as_albedo = true
+albedo_color = Color(100, 0, 0, 1)
+metallic = 1.0
+emission_enabled = true
+emission = Color(100, 0, 0, 1)
+emission_energy_multiplier = 19.4
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_g6b45"]
 material = SubResource("StandardMaterial3D_6vqwg")
 
 [node name="laser" type="CharacterBody3D"]
-script = ExtResource("1_fn5yt")
+script = ExtResource("1_jw0um")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_oes6l")
+disabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.05, 0, 0, 0, -4.37114e-08, -0.05, 0, 1, -2.18557e-09, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_g6b45")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(1, 0, 0, 1)
+light_energy = 4.949
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 0.227
+light_specular = 7.239
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_normal_bias = 9.362
+shadow_transmittance_bias = 0.78
+shadow_blur = 9.4
+omni_range = 514.692
+omni_attenuation = 3.8
+
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]

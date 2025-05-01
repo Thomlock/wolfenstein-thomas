@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="test1"
-run/main_scene="res://world.tscn"
+run/main_scene="res://content/code/world.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Global="*res://Global.gd"
-AudioManager="*res://audio_manager.gd"
+Global="*res://content/code/Global.gd"
+AudioManager="*res://content/code/audio_manager.gd"
 
 [rendering]
 

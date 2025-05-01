@@ -10,10 +10,10 @@ var invincibility_frame = false
 var rand = 0
 #var frame_counter = 0
 #var current_animation = "default"
-const medkit = preload("res://medkit.tscn")
-const ammo = preload("res://ammo.tscn")
-const die_sfx = preload("res://Enemy Pain(1).ogg")
-const shoot_sfx = preload("res://gun.ogg")
+const medkit = preload("res://content/code/medkit.tscn")
+const ammo = preload("res://content/code/ammo.tscn")
+const die_sfx = preload("res://content/audio/Enemy Pain(1).ogg")
+const shoot_sfx = preload("res://content/audio/gun.ogg")
 @onready var player = Global.player
 
 

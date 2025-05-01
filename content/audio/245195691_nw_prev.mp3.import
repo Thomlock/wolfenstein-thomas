@@ -2,13 +2,13 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://36yaes65gyb0"
-path="res://.godot/imported/245195691_nw_prev.mp3-57b481b9854f8165bc90c1f0a1637d55.mp3str"
+uid="uid://cmo2b11th34vh"
+path="res://.godot/imported/245195691_nw_prev.mp3-a2d3007211da4f1ce0b3f37d345a520c.mp3str"
 
 [deps]
 
-source_file="res://245195691_nw_prev.mp3"
-dest_files=["res://.godot/imported/245195691_nw_prev.mp3-57b481b9854f8165bc90c1f0a1637d55.mp3str"]
+source_file="res://content/audio/245195691_nw_prev.mp3"
+dest_files=["res://.godot/imported/245195691_nw_prev.mp3-a2d3007211da4f1ce0b3f37d345a520c.mp3str"]
 
 [params]
 

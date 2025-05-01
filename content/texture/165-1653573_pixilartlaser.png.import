@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chvafemsxqjcm"
-path.s3tc="res://.godot/imported/165-1653573_pixilartlaser.png-736a4a2ad92c997d6d5161c87588222e.s3tc.ctex"
+uid="uid://curob0hbpjvhe"
+path.s3tc="res://.godot/imported/165-1653573_pixilartlaser.png-d3f27338470d1b3f2d3ee94fb6e252bb.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://165-1653573_pixilartlaser.png"
-dest_files=["res://.godot/imported/165-1653573_pixilartlaser.png-736a4a2ad92c997d6d5161c87588222e.s3tc.ctex"]
+source_file="res://content/texture/165-1653573_pixilartlaser.png"
+dest_files=["res://.godot/imported/165-1653573_pixilartlaser.png-d3f27338470d1b3f2d3ee94fb6e252bb.s3tc.ctex"]
 
 [params]
 

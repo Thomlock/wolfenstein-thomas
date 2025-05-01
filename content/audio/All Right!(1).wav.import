@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://qu8fe3nc6sr4"
-path="res://.godot/imported/All Right!(1).wav-0c2e0a103fd2d63e9da6f9af92f98c21.sample"
+uid="uid://dp1lo2qlebob8"
+path="res://.godot/imported/All Right!(1).wav-305c57449b464de3ecdf2311421afec8.sample"
 
 [deps]
 
-source_file="res://All Right!(1).wav"
-dest_files=["res://.godot/imported/All Right!(1).wav-0c2e0a103fd2d63e9da6f9af92f98c21.sample"]
+source_file="res://content/audio/All Right!(1).wav"
+dest_files=["res://.godot/imported/All Right!(1).wav-305c57449b464de3ecdf2311421afec8.sample"]
 
 [params]
 
@@ -21,4 +21,4 @@ edit/normalize=false
 edit/loop_mode=0
 edit/loop_begin=0
 edit/loop_end=-1
-compress/mode=0
+compress/mode=2

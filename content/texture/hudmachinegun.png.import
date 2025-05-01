@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btjuvjl1d5mpm"
-path="res://.godot/imported/hudmachinegun.png-f99acf66a7b9dc11dde26a323a76255b.ctex"
+uid="uid://cnxck8d0rdkad"
+path="res://.godot/imported/hudmachinegun.png-d0b0b35fb8513573dc4384b5c6eebe9a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://hudmachinegun.png"
-dest_files=["res://.godot/imported/hudmachinegun.png-f99acf66a7b9dc11dde26a323a76255b.ctex"]
+source_file="res://content/texture/hudmachinegun.png"
+dest_files=["res://.godot/imported/hudmachinegun.png-d0b0b35fb8513573dc4384b5c6eebe9a.ctex"]
 
 [params]
 

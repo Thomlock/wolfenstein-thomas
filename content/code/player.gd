@@ -6,10 +6,10 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const TURN_SPEED = 0.05
-const gun_sfx = preload("res://gun.ogg")
-const mini_sfx = preload("res://mini.ogg")
-const knife_sfx = preload("res://Knife(1).wav")
-const machine_sfx = preload("res://machine.ogg")
+const gun_sfx = preload("res://content/audio/gun.ogg")
+const mini_sfx = preload("res://content/audio/mini.ogg")
+const knife_sfx = preload("res://content/audio/Knife(1).wav")
+const machine_sfx = preload("res://content/audio/machine.ogg")
 @onready var ui_script = $ui
 @onready var ray = $Camera3D/RayCast3D
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://di1vbh3irjbim"
-path="res://.godot/imported/hudknife.png-a505edd530262df07879aa37fa6f7fde.ctex"
+uid="uid://dxs4jhif2rkgp"
+path="res://.godot/imported/hudknife.png-1938c5bce5076e354966392e4c18298f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://hudknife.png"
-dest_files=["res://.godot/imported/hudknife.png-a505edd530262df07879aa37fa6f7fde.ctex"]
+source_file="res://content/texture/hudknife.png"
+dest_files=["res://.godot/imported/hudknife.png-1938c5bce5076e354966392e4c18298f.ctex"]
 
 [params]
 
