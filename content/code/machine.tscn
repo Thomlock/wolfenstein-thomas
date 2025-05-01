@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8824qm2uek56"]
+
+[ext_resource type="Script" uid="uid://d172f5qce1iur" path="res://content/code/machine.gd" id="1_2prsm"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qofbd"]
+radius = 0.288773
+height = 0.797716
+
+[node name="machine" type="Area3D"]
+script = ExtResource("1_2prsm")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0.9, 0)
+billboard = 2
+hframes = 4
+frame = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_qofbd")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

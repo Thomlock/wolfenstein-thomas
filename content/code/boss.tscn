@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cfl0vjkbm2pj2"]
+[gd_scene load_steps=16 format=3 uid="uid://cfl0vjkbm2pj2"]
 
 [ext_resource type="Texture2D" uid="uid://1ny0rccda1dp" path="res://content/texture/165-1653573_pixilarteat.png" id="1_gec4i"]
 [ext_resource type="Texture2D" uid="uid://cp4cd6ooipxch" path="res://content/texture/165-1653573_pixilart.png" id="2_w7hxf"]
@@ -12,14 +12,16 @@ var dead = false
 var invincibility_frame = false
 var is_attacking = false
 var gravity = ProjectSettings.get_setting(\"physics/3d/default_gravity\")
-var attack_range = 5
+var attack_range = 7
 var laser_range = 10
 var rand = 1
+var stop = position * 0
 @onready var player = Global.player
 const SPEED = 4
 const laser_sfx = preload(\"res://content/audio/245195691_nw_prev.mp3\")
 const crunch_sfx = preload(\"res://content/audio/OnlineSound.net SFX hitHurt.wav\")
 const laser = preload(\"res://content/code/laser.tscn\")
+
 
 func _ready():
 	add_to_group(\"enemy\")
@@ -28,10 +30,10 @@ func _ready():
 func _physics_process(delta):
 	#print(get_real_velocity())
 	#print(is_attacking)
+	move_and_slide()
 	player = Global.player
 	if dead or is_attacking:
 		return
-	
 
 
 	if player == null:
@@ -50,10 +52,10 @@ func _physics_process(delta):
 		if rand == 1:
 			if dist_to_player <= laser_range:
 				velocity = dir * -SPEED
-			else:
-					velocity = velocity/2
-	else:
-			velocity = velocity/2
+			#else:
+					#velocity = velocity/2
+	#else:
+			#velocity = velocity/2
 	if dist_to_player <= attack_range:
 		attack()
 	if dist_to_player >= laser_range:
@@ -62,10 +64,10 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 	
 
-	move_and_slide()
 #	attack()
 	
 func laser_attack():
+	velocity = stop
 	is_attacking = true
 	$AnimatedSprite3D.play(\"laser\")
 	AudioManager.play3D(laser_sfx, self, -20)
@@ -73,24 +75,37 @@ func laser_attack():
 	var laser_shoot = laser.instantiate()
 	laser_shoot.position = self.position
 	laser_shoot.position.y += 2.65
+	var player = Global.player
+	var dir = player.global_position - global_position
+	dir.y -= 2
+	dir = dir.normalized()
+	laser_shoot.velocity = dir * 15
+	print(laser_shoot.transform)
+	laser_shoot.transform = laser_shoot.transform.looking_at(player.global_position)
+	print(laser_shoot.transform)
+	print(player.global_position)
+	
 	get_parent().add_child(laser_shoot)
 	$AnimatedSprite3D.play(\"default\")
-	
+	is_attacking = false
+	rand = randi()%2
 	
 func attack():
 	is_attacking = true
+	velocity = stop
 	$AnimatedSprite3D.play(\"crunch\")
 	AudioManager.play3D(crunch_sfx, self, -20)
+	await $AnimatedSprite3D.frame == 8
+	print($AnimatedSprite3D.frame)
 	var dir = player.global_position - global_position
 	dir.y = 0.0
 	dir = dir.normalized()
 	velocity = dir * 10
-	move_and_slide()
 	await $AnimatedSprite3D.animation_finished 
 	#print(is_attacking)
 	is_attacking = false
 	$AnimatedSprite3D.play(\"default\")
-	rand = randi()%2
+	#rand = randi()%2
 	#print(rand)
 	
 
@@ -108,7 +123,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 "
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kles1"]
-radius = 4.85421
+radius = 3.51746
 height = 11.972
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v33u8"]
@@ -219,6 +234,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gec4i"]
+radius = 3.8449
+height = 10.364
+
 [node name="boss" type="CharacterBody3D"]
 transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0, 0)
 script = SubResource("GDScript_lnbgr")
@@ -251,7 +270,7 @@ omni_attenuation = 1.583
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.86977, 0)
-shape = SubResource("CapsuleShape3D_kles1")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.12525, 0)
+shape = SubResource("CapsuleShape3D_gec4i")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
