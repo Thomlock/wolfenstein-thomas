@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://qu8fe3nc6sr4"
+path="res://.godot/imported/All Right!(1).wav-0c2e0a103fd2d63e9da6f9af92f98c21.sample"
+
+[deps]
+
+source_file="res://All Right!(1).wav"
+dest_files=["res://.godot/imported/All Right!(1).wav-0c2e0a103fd2d63e9da6f9af92f98c21.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

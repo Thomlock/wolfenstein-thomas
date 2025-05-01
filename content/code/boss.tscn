@@ -1,0 +1,290 @@
+[gd_scene load_steps=15 format=3 uid="uid://cfl0vjkbm2pj2"]
+
+[ext_resource type="Texture2D" uid="uid://ckt8ko1u1qs55" path="res://165-1653573_pixilarteat.png" id="2_o1i15"]
+[ext_resource type="Texture2D" uid="uid://wl7hb2cspoeq" path="res://165-1653573_pixilart.png" id="2_we8h1"]
+[ext_resource type="Texture2D" uid="uid://dmgdfur3f0snc" path="res://165-1653573_pixilart2.png" id="3_kvofc"]
+[ext_resource type="Texture2D" uid="uid://bexwygxvpl7od" path="res://165-1653573_pixilartlaser1.png" id="4_ef0k6"]
+[ext_resource type="Texture2D" uid="uid://chvafemsxqjcm" path="res://165-1653573_pixilartlaser.png" id="5_ry61v"]
+
+[sub_resource type="GDScript" id="GDScript_lnbgr"]
+script/source = "extends CharacterBody3D
+var dead = false
+var invincibility_frame = false
+var is_attacking = false
+var gravity = ProjectSettings.get_setting(\"physics/3d/default_gravity\")
+var attack_range = 5
+var laser_range = 10
+var rand = 1
+@onready var player = Global.player
+const SPEED = 4
+const laser_sfx = preload(\"res://245195691_nw_prev.mp3\")
+const crunch_sfx = preload(\"res://OnlineSound.net SFX hitHurt.wav\")
+const laser = preload(\"res://laser.tscn\")
+
+func _ready():
+	add_to_group(\"enemy\")
+	add_to_group(\"boss\")
+
+func _physics_process(delta):
+	#print(get_real_velocity())
+	#print(is_attacking)
+	player = Global.player
+	if dead or is_attacking:
+		return
+	
+
+
+	if player == null:
+		return
+		
+	if invincibility_frame == true:
+		invincibility_frame = false
+		
+	var dist_to_player = global_position.distance_to(player.global_position)
+	if dist_to_player >= attack_range:
+		var dir = player.global_position - global_position
+		dir.y = 0.0
+		dir = dir.normalized()
+		if rand == 0:
+			velocity = dir * SPEED
+		if rand == 1:
+			if dist_to_player <= laser_range:
+				velocity = dir * -SPEED
+			else:
+					velocity = velocity/2
+	else:
+			velocity = velocity/2
+	if dist_to_player <= attack_range:
+		attack()
+	if dist_to_player >= laser_range:
+		laser_attack()
+	if not is_on_floor():
+		velocity.y -= gravity * delta
+	
+
+	move_and_slide()
+#	attack()
+	
+func laser_attack():
+	is_attacking = true
+	$AnimatedSprite3D.play(\"laser\")
+	AudioManager.play3D(laser_sfx, self, -20)
+	await $AnimatedSprite3D.animation_finished
+	var laser_shoot = laser.instantiate()
+	laser_shoot.position = self.position
+	laser_shoot.position.y += 1
+	get_parent().add_child(laser_shoot)
+	
+	
+func attack():
+	is_attacking = true
+	$AnimatedSprite3D.play(\"crunch\")
+	AudioManager.play3D(crunch_sfx, self, -20)
+	var dir = player.global_position - global_position
+	dir.y = 0.0
+	dir = dir.normalized()
+	velocity = dir * 10
+	move_and_slide()
+	await $AnimatedSprite3D.animation_finished 
+	#print(is_attacking)
+	is_attacking = false
+	rand = randi()%2
+	#print(rand)
+	
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body.is_in_group(\"player\"):
+		is_attacking = true
+		$AnimatedSprite3D.play(\"crunch\")
+		AudioManager.play3D(crunch_sfx, self, -20)
+		body.damage()
+		await $AnimatedSprite3D.animation_finished 
+		is_attacking = false
+		rand = randi()%2
+"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kles1"]
+radius = 4.85421
+height = 11.972
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvofc"]
+atlas = ExtResource("2_o1i15")
+region = Rect2(0, 0, 860, 1196)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_we8h1"]
+atlas = ExtResource("2_we8h1")
+region = Rect2(0, 0, 860, 1196)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_etj48"]
+atlas = ExtResource("2_we8h1")
+region = Rect2(0, 0, 860, 1196)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3lj5"]
+atlas = ExtResource("3_kvofc")
+region = Rect2(0, 0, 860, 1196)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1s1j2"]
+atlas = ExtResource("4_ef0k6")
+region = Rect2(0, 0, 860, 1196)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_km2bi"]
+atlas = ExtResource("5_ry61v")
+region = Rect2(0, 0, 860, 1196)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u0duv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvofc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we8h1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvofc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we8h1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvofc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we8h1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvofc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we8h1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvofc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we8h1")
+}],
+"loop": false,
+"name": &"crunch",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_etj48")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3lj5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_1s1j2")
+}, {
+"duration": 4.01,
+"texture": SubResource("AtlasTexture_km2bi")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_1s1j2")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_km2bi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1s1j2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_km2bi")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_1s1j2")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_km2bi")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_1s1j2")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_km2bi")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_1s1j2")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_km2bi")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_1s1j2")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_km2bi")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_1s1j2")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_km2bi")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_1s1j2")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_km2bi")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_1s1j2")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_km2bi")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_1s1j2")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_km2bi")
+}],
+"loop": false,
+"name": &"laser",
+"speed": 5.0
+}]
+
+[node name="boss" type="CharacterBody3D"]
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0, 0)
+script = SubResource("GDScript_lnbgr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.86977, 0)
+shape = SubResource("CapsuleShape3D_kles1")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.89625, 0)
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_u0duv")
+animation = &"crunch"
+autoplay = "default"
+frame = 9
+frame_progress = 1.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.446098, 5.74147, -6.2133)
+light_color = Color(1, 0, 0, 1)
+light_energy = 15.128
+light_indirect_energy = 15.638
+light_volumetric_fog_energy = 14.617
+light_size = 0.617
+light_specular = 0.0
+shadow_bias = 0.0
+omni_range = 227.41
+omni_attenuation = 1.583
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.86977, 0)
+shape = SubResource("CapsuleShape3D_kles1")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

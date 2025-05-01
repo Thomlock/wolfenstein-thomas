@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8824qm2uek56"]
+
+[ext_resource type="Script" uid="uid://crii5cj6cleeh" path="res://machine.gd" id="1_g0yge"]
+[ext_resource type="Texture2D" uid="uid://cnfyf6csj5uf4" path="res://wolf-items.png" id="2_3nmf1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qofbd"]
+radius = 0.288773
+height = 0.797716
+
+[node name="machine" type="Area3D"]
+script = ExtResource("1_g0yge")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0.9, 0)
+billboard = 2
+texture = ExtResource("2_3nmf1")
+hframes = 4
+frame = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_qofbd")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
