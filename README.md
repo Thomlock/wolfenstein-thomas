@@ -6,8 +6,8 @@
 
 ## Voici les tutoriels que j’ai utilisés :
 
-### Pour réaliser la base du jeu :
-### Pour faire les explosions :
+### Pour réaliser la base du jeu : https://www.youtube.com/playlist?list=PL4vjw0qHwNZIQZScBFaON0WGkz-BMyoCh
+### Pour faire les explosions : https://www.youtube.com/watch?v=RtJJVjjM_-Q&t=11s
 
 ## Les modifications que j’ai apportées :
 
